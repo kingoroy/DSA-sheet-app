@@ -58,6 +58,10 @@ const DsaSheetPage = ({ activeEmail, registeredUsers, isLoggedIn, setOpenModal }
   return (
     <div className='global-margin'>
       <div className='dsaSheetContainer'>
+        <div className='titleWrapper'>
+        <h1>Nyn’s DSA Sheet – Top Coding Interview Problems</h1>
+        <p>DSA Sheet contains very handily crafted and picked top coding interview questions from different topics of Data Structures & Algorithms. These questions are one of the most asked coding interview questions in coding interviews of companies like Google, Amazon, Microsoft, Facebook, Swiggy, Flipkart, etc, and cover almost all of the concepts related to Data Structure & Algorithms.</p>
+        </div>
         {topics?.map((topic) => (
           <div key={topic?.topicId} className={`dsaTopicContainer ${retrieveTopicId(completedProblems)?.includes(topic?.topicId) && 'inProgress'}`}>
             <div className='dsaDropdownOption' onClick={() => handleClickTopic(topic)}>
