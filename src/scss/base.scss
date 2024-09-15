@@ -1,126 +1,126 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
-    background: $white;
+  background: $white;
+  margin: 0;
+  padding: 0;
 }
 
 .global-margin {
-    // margin: 80px auto 0px;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-    background-color: $white;
-    overflow-x: hidden;
-    min-height: 100vh;
+  background-color: $white;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  // margin: 80px auto 0px;
+}
+
+.inputWrapper {
+  background: inherit;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+  min-height: 60px;
+  position: relative;
+  width: 100%;
+
+  .errorMsg {
+      color: red;
+      font-size: 16px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+  }
+
+  .inputField {
+      background: inherit;
+      border: 1px solid $input-border;
+      border-radius: 4px;
+      color: #8f07f7;
+      font-size: 18px;
+      height: 40px;
+      outline: none;
+      padding-left: 40px;
+
+      &:disabled {
+          background-color: $disabled-input-background;
+          color: #a39b9b;
+      }
+
+      &:focus {
+          border: 2px solid #8f07f7;
+      }
+
+      &::placeholder {
+          color: $input-border;
+          font-size: 18px;
+      }
+  }
+
+  .inputLabel {
+      border-radius: 2px;
+      color: rgb(156, 155, 155);
+      font-size: 20px;
+      left: 10px;
+      padding: 2px 4px;
+      position: absolute;
+      top: 12%;
+      transition: all 0.3s;
+      z-index: 11;
+  }
+
+  .passwordToggle {
+      color: rgb(156, 155, 155);
+      cursor: pointer;
+      font-size: 20px;
+      position: absolute;
+      right: 10px;
+      top: 18%;
+      z-index: 11;
+  }
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-}
-
-
-.inputWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: relative;
-    background: inherit;
-    border-radius: 4px;
-    width: 100%;
-    min-height: 60px;
-    margin-bottom: 10px;
-    .inputField {
-        font-size: 18px;
-        background: inherit;
-        outline: none;
-        border: 1px solid $input-border;
-        border-radius: 4px;
-        padding-left: 40px;
-        height: 40px;
-        color: #8f07f7;
-
-        &:focus {
-            border: 2px solid #8f07f7;
-        }
-
-        &::placeholder {
-            color: $input-border;
-            font-size: 18px;
-        }
-
-        &:disabled {
-            background-color: $disabled-input-background;
-            color: #a39b9b;
-        }
-
-    }
-    .inputLabel {
-        position: absolute;
-        top: 12%;
-        left: 10px;
-        color: rgb(156, 155, 155);
-        font-size: 20px;
-        transition: all 0.3s;
-        padding: 2px 4px;
-        border-radius: 2px;
-        z-index: 11;
-    }
-
-    .errorMsg {
-        color: red;
-        font-size: 16px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .passwordToggle {
-        position: absolute;
-        font-size: 20px;
-        color: rgb(156, 155, 155);
-        top: 18%;
-        right: 10px;
-        cursor: pointer;
-        z-index: 11;
-    }
+  color: black;
+  display: block;
+  margin-bottom: 5px;
 }
 
 input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    accent-color: #8f07f7;
+  accent-color: #8f07f7;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
 }
 
 /* Navbar.css */
 @keyframes fadeIn {
-    from {
+  from {
       opacity: 0;
-    }
-    to {
+  }
+  to {
       opacity: 1;
-    }
   }
-  
-  @keyframes slideIn {
-    from {
+}
+
+@keyframes slideIn {
+  from {
       transform: translateY(-100%);
-    }
-    to {
+  }
+  to {
       transform: translateY(0);
-    }
   }
-  
-  .navbarContainer {
-    animation: slideIn 0.5s ease-out;
-  }
-  
-  .modalContainer {
-    animation: fadeIn 0.5s ease-in;
-  }
+}
+
+.modalContainer {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.navbarContainer {
+  animation: slideIn 0.5s ease-out;
+}

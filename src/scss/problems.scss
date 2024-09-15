@@ -1,41 +1,47 @@
 .problemsContainer {
-    padding: 20px 10px;
     overflow-x: auto;
+    padding: 20px 10px;
 
     .problemsTableContainer {
-        width: 100%;
-        border-collapse: collapse; 
+        border-collapse: collapse;
         overflow: hidden;
-     th, td {
+        width: 100%;
+
+        th, td {
             border: 1px solid #babbbe;
             padding: 8px;
             text-align: center;
             text-wrap: nowrap;
-          }
+        }
+
+        .articleCell {
+            color: $black;
+        }
+
+        .codeCell {
+            color: $black;
+        }
 
         .difficulty-easy {
-            padding: 8px 4px;
-            border-radius: 15px;
             background-color: #81d581e2;
-        }
-        .difficulty-medium {
-            padding: 8px 4px;
             border-radius: 15px;
-            background-color: #ebbe0bed;
+            padding: 8px 4px;
         }
+
         .difficulty-hard {
-            padding: 8px 4px;
-            border-radius: 15px;
             background-color: #f22828d3;
+            border-radius: 15px;
+            padding: 8px 4px;
         }
-    .youtubeCell {
-        color: red;
-    }   
-    .codeCell {
-        color: $black;
-    }  
-    .articleCell {
-        color: $black;
+
+        .difficulty-medium {
+            background-color: #ebbe0bed;
+            border-radius: 15px;
+            padding: 8px 4px;
+        }
+
+        .youtubeCell {
+            color: red;
+        }
     }
 }
-};

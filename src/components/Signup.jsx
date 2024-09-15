@@ -6,7 +6,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { toast } from 'react-toastify';
 
-const Signup = ({ email, setIsLoggedIn, setOpenModal }) => {
+const Signup = ({ email, setIsLoggedIn, onClose }) => {
   const [formData, setFormData] = useState({
     fullName: '',
     createPassword: '',
@@ -57,7 +57,7 @@ const Signup = ({ email, setIsLoggedIn, setOpenModal }) => {
       return true;
     }
   };
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const isFullNameValid = validateFullName(formData.fullName);
@@ -68,12 +68,13 @@ const Signup = ({ email, setIsLoggedIn, setOpenModal }) => {
       saveUserDetails(formData.fullName, email, formData.createPassword);
       setIsLoggedIn(true);
       setTimeout(() => { 
-        setOpenModal(false); 
+        onClose();
       }, 600);
       toast.success(`welcome ${formData?.fullName}, you are successfully logged in`,  {
         position: "top-center", 
         autoClose: 2000
-    })
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -152,5 +153,4 @@ const Signup = ({ email, setIsLoggedIn, setOpenModal }) => {
     </div>
   );
 };
-}
 export default Signup;

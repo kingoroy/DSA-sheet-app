@@ -37,7 +37,7 @@ const Problems = ({ topic, completedProblems, setCompletedProblems, isLoggedIn, 
           <thead>
             <tr>
               <th>Status</th>
-              <th>Problem Name</th>
+              <th>Problems</th>
               <th>Difficulty Level</th>
               <th>Youtube</th>
               <th>LeetCode</th>
@@ -57,9 +57,9 @@ const Problems = ({ topic, completedProblems, setCompletedProblems, isLoggedIn, 
                 <td>{problem.problemName}</td>
                 <td>
                   <p className={`difficulty-${problem?.difficultyLevel?.toLowerCase()}`}>{problem.difficultyLevel}</p></td>
-                <td><a href={problem.youtubeLink} className='youtubeCell'><FaYoutube /></a></td>
-                <td><a href={problem.leetCode} className='codeCell'><FaCode /></a></td>
-                <td><a href={problem.articleLink} className='articleCell'><RiArticleLine /></a></td>
+                <td><a href={problem.youtubeLink} target='_blank' className='youtubeCell'><FaYoutube /></a></td>
+                <td><a href={problem.leetCode}  target='_blank' className='codeCell'><FaCode /></a></td>
+                <td><a href={problem.articleLink}  target='_blank' className='articleCell'><RiArticleLine /></a></td>
               </tr>
             ))}
           </tbody>

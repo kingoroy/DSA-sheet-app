@@ -11,7 +11,6 @@ const ThemeToggle = () => {
     setIsDarkMode(newMode);
     localStorage.setItem('isDarkMode', JSON.stringify(newMode));
     document.body.classList.toggle('dark-mode', newMode);
-    console.log('onclick');
   };
 
   useEffect(() => {

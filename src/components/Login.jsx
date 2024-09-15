@@ -26,7 +26,6 @@ const Login = ({ email, onClose, setIsLoggedIn }) => {
 
     if (isPasswordValid) {
       const result = validateUserLogin(email, password);
-      console.log(result);
 
       if (result.success) {
         setIsLoggedIn(true);

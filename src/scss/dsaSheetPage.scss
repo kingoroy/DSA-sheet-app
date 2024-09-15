@@ -1,82 +1,94 @@
 .dsaSheetContainer {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     background-color: inherit;
-    padding: 20px 40px;
     color: $black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
 
     @include breakpoint(medium) {
         padding: 20px 100px;
-    };
-    
+    }
+
     @include breakpoint(large) {
-        padding: 20px 300px;
-    };
+        padding: 20px 300px 40px 300px;
+    }
 
     .titleWrapper {
-        float: left;
-        padding:20px 0px;
-        
-        &>h1 {
+        color: $grey-text-color;
+        padding: 20px 0px;
+        text-align: center;
+
+        & > h1 {
+            color: $black;
             margin-bottom: 20px;
+
+            @include breakpoint(small-only) {
+                font-size: 24px;
+                font-weight: 800;
+                margin-bottom: 10px;
+            }
+        }
+
+        @include breakpoint(small-only) {
+            font-size: 14px;
         }
     }
 
     .dsaTopicContainer {
-        margin-top: 20px;
         border: 1px solid #e6e8ed;
+        border-radius: 20px;
         border-top: 4px solid #7b62d9;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        border-radius: 20px;
+        margin-top: 20px;
         padding: 20px 30px;
         width: 100%;
 
-        .dsaDropdownOption {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
+        .arrowIcon {
+            transition: transform 0.3s ease;
 
-        .topicName {
-            font-size: 22px;
-        }
-
-        .dsaTopicRightWrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            gap: 10px;
-
-            & > div {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
+            &.rotate {
+                transform: rotate(180deg);
             }
         }
 
-        .arrowIcon {
-            transition: transform 0.3s ease;
-        }
-        
-        .arrowIcon.rotate {
-            transform: rotate(180deg);
-        }
-        
         .dropdownContent {
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             transition: max-height 0.5s ease, opacity 0.5s ease;
+
+            &.open {
+                max-height: 500px; /* Adjust this value based on your content */
+                opacity: 1;
+            }
         }
-        
-        .dropdownContent.open {
-            max-height: 500px; /* Adjust this value based on your content */
-            opacity: 1;
+
+        .dsaDropdownOption {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .dsaTopicRightWrapper {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+
+            & > div {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        .topicName {
+            font-size: 22px;
         }
     }
 }
