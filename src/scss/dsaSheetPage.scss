@@ -1,0 +1,135 @@
+.dsaSheetContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px 200px;
+
+    .dsaTopicContainer {
+        margin-top: 20px;
+        border: 1px solid grey;
+        border-radius: 4px;
+        padding: 10px;
+        width: 100%;
+
+        .dsaDropdownOption {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .topicName {
+            font-size: 22px;
+        }
+        .dsaTopicRightWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 10px;
+
+            &>div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+
+        // .dsaTopic {
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     justify-content: center;
+        //     width: 100%;
+        //     margin-top: 20px;
+
+        //     .dsaTopicTitle {
+        //         font-size: 24px;
+        //         font-weight: 600;
+        //         color: #333;
+        //     }
+
+        //     .dsaTopicContent {
+        //         display: flex;
+        //         flex-direction: column;
+        //         align-items: center;
+        //         justify-content: center;
+        //         width: 100%;
+        //         margin-top: 20px;
+
+        //         .dsaTopicContentItem {
+        //             display: flex;
+        //             flex-direction: column;
+        //             align-items: center;
+        //             justify-content: center;
+        //             width: 100%;
+        //             margin-top: 20px;
+
+        //             .dsaTopicContentItemTitle {
+        //                 font-size: 20px;
+        //                 font-weight: 600;
+        //                 color: #333;
+        //             }
+
+        //             .dsaTopicContentItemContent {
+        //                 display: flex;
+        //                 flex-direction: column;
+        //                 align-items: center;
+        //                 justify-content: center;
+        //                 width: 100%;
+        //                 margin-top: 20px;
+
+        //                 .dsaTopicContentItemContentItem {
+        //                     display: flex;
+        //                     flex-direction: column;
+        //                     align-items: center;
+        //                     justify-content: center;
+        //                     width: 100%;
+        //                     margin-top: 20px;
+
+        //                     .dsaTopicContentItemContentItemTitle {
+        //                         font-size: 16px;
+        //                         font-weight: 600;
+        //                         color: #333;
+        //                     }
+
+        //                     .dsaTopicContentItemContentItemContent {
+        //                         display: flex;
+        //                         flex-direction: column;
+        //                         align-items: center;
+        //                         justify-content: center;
+        //                         width: 100%;
+        //                         margin-top: 20px;
+
+        //                         .dsaTopicContentItemContentItemContentItem {
+        //                             display: flex;
+        //                             flex-direction: column;
+        //                             align-items: center;
+        //                             justify-content: center;
+        //                             width: 100%;
+        //                             margin-top: 20px;
+
+        //                             .dsaTopicContentItemContentItemContentItemTitle {
+        //                                 font-size: 14px;
+        //                                 font-weight: 600;
+        //                                 color: #333;
+        //                             }
+
+        //                             .dsaTopicContentItemContentItemContentItemContent {
+        //                                 display: flex;
+        //                                 flex-direction: column;
+        //                                 align-items: center;
+        //                             }
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+    }
+}

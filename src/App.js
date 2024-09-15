@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Navbar from "./components/Navbar";
+import DsaSheetPage from "./pages/DsaSheetPage";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const registeredUsers = JSON.parse(localStorage.getItem('userDetails')) || [];
+    const activeEmail = localStorage.getItem('activeEmail');
+
+    if (activeEmail && registeredUsers.some(user => user.email === activeEmail)) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  const handleLoginLogout = () => {
+    if (isLoggedIn) {
+      localStorage.removeItem('activeEmail');
+      setIsLoggedIn(false);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn }handleLoginLogout={handleLoginLogout} />
+      <DsaSheetPage />
     </div>
   );
 }

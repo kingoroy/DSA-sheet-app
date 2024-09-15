@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.global-margin {
+    // margin: 80px auto 0px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: white;
+    overflow-x: hidden;
+    // min-height: calc(100vh - 100px);
+
+    //  @include breakpoint(small-only) {
+    //   // display: flex;
+    //   // justify-content: center;
+    //   margin: 20px auto 0px;
+    //  }
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    // margin-bottom: 10px;
+    border-radius: 4px;
+    width: 100%;
+    min-height: 60px;
+    margin-bottom: 10px;
+    .inputField {
+        font-size: 18px;
+        background: inherit;
+        outline: none;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+        border-radius: 4px;
+        padding-left: 40px;
+        height: 40px;
+        color: #8f07f7;
+
+        &:focus {
+            border: 2px solid #8f07f7;
+        }
+
+        &::placeholder {
+            color: rgba(128, 128, 128, 0.5);
+            font-size: 18px;
+        }
+
+        &:disabled {
+            background-color: #f1f1f1;
+            color: #a39b9b;
+        }
+
+    }
+    .inputLabel {
+        position: absolute;
+        top: 11%;
+        left: 10px;
+        color: rgb(156, 155, 155);
+        font-size: 20px;
+        transition: all 0.3s;
+        padding: 2px 4px;
+        border-radius: 2px;
+        z-index: 11;
+    }
+
+    .errorMsg {
+        color: red;
+        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .passwordToggle {
+        position: absolute;
+        font-size: 20px;
+        color: rgb(156, 155, 155);
+        top: 18%;
+        right: 10px;
+        cursor: pointer;
+        z-index: 11;
+    }
+}
