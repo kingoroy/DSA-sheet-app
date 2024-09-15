@@ -4,11 +4,11 @@ import DsaSheetPage from "./pages/DsaSheetPage";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const registeredUsers = JSON.parse(localStorage.getItem('userDetails')) || [];
+  const activeEmail = localStorage.getItem('activeEmail');
 
   useEffect(() => {
-    const registeredUsers = JSON.parse(localStorage.getItem('userDetails')) || [];
-    const activeEmail = localStorage.getItem('activeEmail');
-
     if (activeEmail && registeredUsers.some(user => user.email === activeEmail)) {
       setIsLoggedIn(true);
     } else {
@@ -25,8 +25,8 @@ function App() {
 
   return (
     <div>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn }handleLoginLogout={handleLoginLogout} />
-      <DsaSheetPage />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn }handleLoginLogout={handleLoginLogout} openModal={openModal} setOpenModal={setOpenModal}/>
+      <DsaSheetPage isLoggedIn={isLoggedIn} activeEmail={activeEmail} registeredUsers={registeredUsers} setOpenModal={setOpenModal} />
     </div>
   );
 }

@@ -1,0 +1,35 @@
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == 'medium' {
+        @media (min-width: $bp-medium) {
+            @content;
+        };
+    } @else if $breakpoint == 'large' {
+        @media (min-width: $bp-large) {
+            @content;
+        }
+    } @else if $breakpoint == 'small-only' {
+        @media (max-width : $bp-max-small-only) {
+            @content;
+        } 
+    } @else if $breakpoint == 'small' {
+        @media (min-width : $bp-max-small-only) and (max-width: $bp-max-small-only) {
+            @content;
+        } 
+    } @else if $breakpoint == 'small-medium' {
+        @media (min-width : $bp-small-medium) {
+            @content;
+        } 
+    }  @else if $breakpoint == 'medium-large' {
+        @media (min-width : $bp-medium-large) {
+            @content;
+        } 
+    } 
+    @else if $breakpoint == 'small-mobile' {
+        @media (max-width : $bp-small-small) {
+            @content;
+        } 
+    } 
+     @else {
+        @error 'No value could be retrived for ' + $breakpoint;
+    }
+}

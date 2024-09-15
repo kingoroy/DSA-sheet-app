@@ -1,10 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { topics } from '../data/topic';
 import { IoIosArrowDown } from "react-icons/io";
 import Problems from '../components/Problems';
 
-const DsaSheetPage = () => {
+const DsaSheetPage = ({ activeEmail, registeredUsers, isLoggedIn, setOpenModal }) => {
   const [activeTopic, setActiveTopic] = useState('');
+  const user = registeredUsers.find(user => user.email === activeEmail);
+  const initialCompletedProblems = user ? user.completedProblems : [];
+  const [completedProblems, setCompletedProblems] = useState(isLoggedIn ? initialCompletedProblems : []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      const storedUsers = JSON.parse(localStorage.getItem('userDetails')) || [];
+      const storedUser = storedUsers.find(user => user.email === activeEmail);
+      if (storedUser) {
+        setCompletedProblems(storedUser.completedProblems || []);
+      }
+    }
+  }, [isLoggedIn, activeEmail]);
 
   const handleClickTopic = (topic) => {
     if (activeTopic?.topicId === topic?.topicId) {
@@ -13,29 +26,43 @@ const DsaSheetPage = () => {
       setActiveTopic(topic);
     }
     console.log(topic, 'topic');
-
   }
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      const addCompleteProblems = registeredUsers.map(user => {
+        if (user?.email === activeEmail) {
+          user.completedProblems = completedProblems;
+        }
+        return user;
+      });
+      localStorage.setItem('userDetails', JSON.stringify(addCompleteProblems));
+      console.log(addCompleteProblems, 'addCompleteProblems');
+    }
+  }, [completedProblems, isLoggedIn, activeEmail, registeredUsers]);
 
   return (
     <div className='global-margin'>
       <div className='dsaSheetContainer'>
         {topics?.map((topic) => (
           <div key={topic?.topicId} className='dsaTopicContainer'>
-            <div className='dsaDropdownOption'  onClick={()=>handleClickTopic(topic)}>
+            <div className='dsaDropdownOption' onClick={() => handleClickTopic(topic)}>
               <p className='topicName'>{topic?.topicName}</p>
               <div className='dsaTopicRightWrapper'>
                 <div>
                   0/10
                 </div>
-                {/* <input type='checkbox' /> */}
-                <div>
+                <div className={`arrowIcon ${activeTopic?.topicId === topic?.topicId ? 'rotate' : ''}`}>
                   <IoIosArrowDown />
                 </div>
               </div>
             </div>
-            <ul>
-            {activeTopic?.topicId===topic?.topicId && <Problems topic={topic}/>}
-          </ul>
+            <ul className={`dropdownContent ${activeTopic?.topicId === topic?.topicId ? 'open' : ''}`}>
+              {activeTopic?.topicId === topic?.topicId && <Problems topic={topic} completedProblems={completedProblems} setOpenModal={setOpenModal}
+                setCompletedProblems={setCompletedProblems} registeredUsers={registeredUsers} activeEmail={activeEmail}
+                isLoggedIn={isLoggedIn}
+              />}
+            </ul>
           </div>
         ))}
       </div>

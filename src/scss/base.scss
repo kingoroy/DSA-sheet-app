@@ -16,13 +16,7 @@ body, html {
     box-sizing: border-box;
     background-color: white;
     overflow-x: hidden;
-    // min-height: calc(100vh - 100px);
-
-    //  @include breakpoint(small-only) {
-    //   // display: flex;
-    //   // justify-content: center;
-    //   margin: 20px auto 0px;
-    //  }
+    min-height: 100vh;
 }
 
 label {
@@ -95,4 +89,11 @@ label {
         cursor: pointer;
         z-index: 11;
     }
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #8f07f7;
 }

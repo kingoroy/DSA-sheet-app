@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Modal from './modal';
 import Login from './Login';
 
-const Navbar = ({ isLoggedIn, handleLoginLogout, setIsLoggedIn }) => {
-  const [openModal, setOpenModal] = useState(false);
+const Navbar = ({ isLoggedIn, handleLoginLogout, setIsLoggedIn, openModal, setOpenModal }) => {
   const [email, setEmail] = useState('');
 
   const handleClickLogin = () => {

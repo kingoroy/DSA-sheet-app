@@ -45,7 +45,7 @@ const Modal = ({setOpenModal, openModal, setIsLoggedIn}) => {
   };
 
   return (
-    <>
+    <div style={{width: '100vw'}}>
     <div style={overlayStyle}></div>
     <div className='modalContainer' ref={modalRef}>
       <div className='closeBtn'>
@@ -64,7 +64,7 @@ const Modal = ({setOpenModal, openModal, setIsLoggedIn}) => {
       {step === 'login' && <Login email={email} onClose={onClose} setIsLoggedIn={setIsLoggedIn}/>}
       {step === 'signup' && <Signup email={email} onClose={onClose} setIsLoggedIn={setIsLoggedIn}/>}
     </div>
-    </>
+    </div>
   );
 };
 
