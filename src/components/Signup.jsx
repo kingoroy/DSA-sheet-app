@@ -6,7 +6,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { toast } from 'react-toastify';
 
-const Signup = ({ email, setIsLoggedIn }) => {
+const Signup = ({ email, setIsLoggedIn, setOpenModal }) => {
   const [formData, setFormData] = useState({
     fullName: '',
     createPassword: '',
@@ -67,6 +67,9 @@ const Signup = ({ email, setIsLoggedIn }) => {
     if (isFullNameValid && isCreatePasswordValid && isConfirmPasswordValid) {
       saveUserDetails(formData.fullName, email, formData.createPassword);
       setIsLoggedIn(true);
+      setTimeout(() => { 
+        setOpenModal(false); 
+      }, 1000);
       toast.success(`welcome ${formData?.fullName}, you are successfully logged in`);
     }
   };

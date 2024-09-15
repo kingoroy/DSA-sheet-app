@@ -32,4 +32,12 @@ export const validateUserLogin = (email, password) => {
       return { success: false, message: 'Incorrect password' };
     }
   };
+
+  export const retrieveTopicId = (completeProblems) => {
+    const firstDigits = completeProblems.map(num => Number(String(num)[0]));
+    const uniqueDigits = [...new Set(firstDigits)];
+    console.log(uniqueDigits, 'uniqueDigits');
+    
+    return uniqueDigits;
+  }
   

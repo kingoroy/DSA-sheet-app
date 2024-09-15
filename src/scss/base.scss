@@ -6,7 +6,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    
+    background: $white;
 }
 
 .global-margin {
@@ -14,7 +14,7 @@ body, html {
     width: 100%;
     position: relative;
     box-sizing: border-box;
-    background-color: white;
+    background-color: $white;
     overflow-x: hidden;
     min-height: 100vh;
 }
@@ -31,7 +31,7 @@ label {
     flex-direction: column;
     gap: 5px;
     position: relative;
-    // margin-bottom: 10px;
+    background: inherit;
     border-radius: 4px;
     width: 100%;
     min-height: 60px;
@@ -40,7 +40,7 @@ label {
         font-size: 18px;
         background: inherit;
         outline: none;
-        border: 1px solid rgba(128, 128, 128, 0.5);
+        border: 1px solid $input-border;
         border-radius: 4px;
         padding-left: 40px;
         height: 40px;
@@ -51,19 +51,19 @@ label {
         }
 
         &::placeholder {
-            color: rgba(128, 128, 128, 0.5);
+            color: $input-border;
             font-size: 18px;
         }
 
         &:disabled {
-            background-color: #f1f1f1;
+            background-color: $disabled-input-background;
             color: #a39b9b;
         }
 
     }
     .inputLabel {
         position: absolute;
-        top: 11%;
+        top: 12%;
         left: 10px;
         color: rgb(156, 155, 155);
         font-size: 20px;
@@ -97,3 +97,30 @@ input[type="checkbox"] {
     cursor: pointer;
     accent-color: #8f07f7;
 }
+
+/* Navbar.css */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .navbarContainer {
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .modalContainer {
+    animation: fadeIn 0.5s ease-in;
+  }

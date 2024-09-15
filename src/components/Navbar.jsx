@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './modal';
 import Login from './Login';
+import ThemeToggle from './themeToggle';
 
 const Navbar = ({ isLoggedIn, handleLoginLogout, setIsLoggedIn, openModal, setOpenModal }) => {
   const [email, setEmail] = useState('');
@@ -8,7 +9,6 @@ const Navbar = ({ isLoggedIn, handleLoginLogout, setIsLoggedIn, openModal, setOp
   const handleClickLogin = () => {
     setOpenModal(true);
   };
-console.log(isLoggedIn, 'logg');
 
   const handleCloseModal = () => {
     setOpenModal(false);
@@ -16,12 +16,16 @@ console.log(isLoggedIn, 'logg');
 
   return (
     <nav className='navbarContainer'>
-      <input />
-      <button>Search</button>
+      {/* <input />
+      <button>Search</button> */}
+      <div className='logoContainer'>
+        NyN
+        </div>
+        <ThemeToggle />
       {isLoggedIn ? (
-        <button onClick={handleLoginLogout}>Logout</button>
+        <button onClick={handleLoginLogout} className='loginBtn'>Logout</button>
       ) : (
-        <button onClick={handleClickLogin}>Login</button>
+        <button onClick={handleClickLogin} className='loginBtn'>Login</button>
       )}
       {openModal && (
         <Modal setOpenModal={setOpenModal} openModal={openModal} setIsLoggedIn={setIsLoggedIn}>

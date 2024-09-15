@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { topics } from '../data/topic';
 import { IoIosArrowDown } from "react-icons/io";
 import Problems from '../components/Problems';
+import { retrieveTopicId } from '../components/helper';
 
 const DsaSheetPage = ({ activeEmail, registeredUsers, isLoggedIn, setOpenModal }) => {
   const [activeTopic, setActiveTopic] = useState('');
@@ -28,6 +29,19 @@ const DsaSheetPage = ({ activeEmail, registeredUsers, isLoggedIn, setOpenModal }
     console.log(topic, 'topic');
   }
 
+  const exactCompletionNumber = (topic) => {
+    let count = 0;
+    if (!isLoggedIn) {
+      return 0;
+    }
+    topic?.problems?.forEach(problem => {
+      if (completedProblems?.includes(problem?.problemId)) {
+        count++;
+      }
+    });
+    return count;
+  };
+
   useEffect(() => {
     if (isLoggedIn) {
       const addCompleteProblems = registeredUsers.map(user => {
@@ -45,12 +59,12 @@ const DsaSheetPage = ({ activeEmail, registeredUsers, isLoggedIn, setOpenModal }
     <div className='global-margin'>
       <div className='dsaSheetContainer'>
         {topics?.map((topic) => (
-          <div key={topic?.topicId} className='dsaTopicContainer'>
+          <div key={topic?.topicId} className={`dsaTopicContainer ${retrieveTopicId(completedProblems)?.includes(topic?.topicId) && 'inProgress'}`}>
             <div className='dsaDropdownOption' onClick={() => handleClickTopic(topic)}>
               <p className='topicName'>{topic?.topicName}</p>
               <div className='dsaTopicRightWrapper'>
                 <div>
-                  0/10
+                  {exactCompletionNumber(topic)}/{topic?.problems?.length}
                 </div>
                 <div className={`arrowIcon ${activeTopic?.topicId === topic?.topicId ? 'rotate' : ''}`}>
                   <IoIosArrowDown />

@@ -3,8 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  color: black;
+  background-color: $white;
+  color: $black;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -37,11 +37,7 @@
       // margin: 20px 0px;
     }
     .NavigateToYourNext {
-      font-family: "Nerko One", cursive;
-      font-weight: 200;
-      font-style: normal;
-
-      font-size: 45px;
+     @include logoFont;
       letter-spacing: 2px;
       color: #faab00;
       // font-weight: bold;

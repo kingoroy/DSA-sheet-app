@@ -33,3 +33,15 @@
         @error 'No value could be retrived for ' + $breakpoint;
     }
 }
+
+@mixin logoFont {
+    font-family: "Nerko One", cursive;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 45px;
+    letter-spacing: 2px;
+    color: #faab00;
+    @include breakpoint('small-only') {
+        font-size: 30px;
+    }
+}

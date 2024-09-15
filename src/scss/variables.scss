@@ -7,3 +7,40 @@ $bp-medium-large: 950px !default;
 $bp-large: 1280px !default;
 $bp-max-small-only: 767.98px !default;
 $bp-small-small: 450px !default;
+
+$primary-text-color: var(--primary-text-color);
+$grey-text-color: var(--grey-text-color);
+$white: var(--white);
+$black: var(--black);
+$input-border: var(--input-border);
+$disabled-input-background: var(--disabled-input-background);
+
+:root {
+    --primary-text-color: #560bad;
+    --disabled-input-background: #f1f1f1;
+    --input-border: rgba(128, 128, 128, 0.5);
+    --grey-text-color: #787c8f;
+    --black: #121212;
+    --light-grey-text-color: #25252d;
+    --white: white;
+    --grey-border: #dcdee0;
+    --black: black;
+    --portfolio-background: linear-gradient(to right, #ffffff, #ffffff, #ffffff);
+    --primary-btn-red: #f70767;
+    --card-boxShadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;;
+}
+
+.dark-mode {
+    --white: #121212;
+    --black:white;
+    --disabled-input-background: #434242;
+    --input-border: rgba(211, 200, 200, 0.599);
+    --grey-border: #3b3b3b;
+    --black: white;
+    --portfolio-background: linear-gradient(to right, black, #1b1b1b, black);
+    --grey-text-color: #b8b8b8;
+    --light-grey-text-color: #bfbfd1;
+    --primary-btn-red:#f70767;
+    --card-boxShadow:  rgba(201, 200, 200, 0.04) 0px 3px 5px;
+    --primary-text-color: #996ccd;
+}
