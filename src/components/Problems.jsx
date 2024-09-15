@@ -14,7 +14,10 @@ const Problems = ({ topic, completedProblems, setCompletedProblems, isLoggedIn, 
   const handleCheckboxChange = (problemId) => {
     if (!isLoggedIn) {
       setOpenModal(true);
-      toast.info('Please login to mark the problem as completed');
+      toast.info('Please login to mark the problem as completed', {
+        position: 'top-center',
+        autoClose: 3000,
+      });
       return;
     }
     setCompletedProblems((prev) => {
@@ -54,9 +57,9 @@ const Problems = ({ topic, completedProblems, setCompletedProblems, isLoggedIn, 
                 <td>{problem.problemName}</td>
                 <td>
                   <p className={`difficulty-${problem?.difficultyLevel?.toLowerCase()}`}>{problem.difficultyLevel}</p></td>
-                <td><a href={problem.youtubeLink}><FaYoutube /></a></td>
-                <td><a href={problem.leetCode}><FaCode /></a></td>
-                <td><a href={problem.articleLink}><RiArticleLine /></a></td>
+                <td><a href={problem.youtubeLink} className='youtubeCell'><FaYoutube /></a></td>
+                <td><a href={problem.leetCode} className='codeCell'><FaCode /></a></td>
+                <td><a href={problem.articleLink} className='articleCell'><RiArticleLine /></a></td>
               </tr>
             ))}
           </tbody>

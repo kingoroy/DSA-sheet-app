@@ -1,13 +1,10 @@
 .problemsContainer {
     padding: 20px 10px;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: auto;
 
-    // table {
-    //     border-radius: 5px;
-    // }
     .problemsTableContainer {
         width: 100%;
-        border-collapse: collapse; /* Ensure border-collapse is set to separate */
+        border-collapse: collapse; 
         overflow: hidden;
      th, td {
             border: 1px solid #babbbe;
@@ -15,14 +12,7 @@
             text-align: center;
             text-wrap: nowrap;
           }
-    //  .difWrapper {
-    //     text-align: center;
-    //     margin: auto;
-    //     &>p {
-    //         padding: 20px;
-    //         border-radius: 4px;
-    //         width: fit-content;
-    //     }
+
         .difficulty-easy {
             padding: 8px 4px;
             border-radius: 15px;
@@ -38,7 +28,14 @@
             border-radius: 15px;
             background-color: #f22828d3;
         }
-    //  }     
-
+    .youtubeCell {
+        color: red;
+    }   
+    .codeCell {
+        color: $black;
+    }  
+    .articleCell {
+        color: $black;
+    }
 }
 };

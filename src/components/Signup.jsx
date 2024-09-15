@@ -69,9 +69,11 @@ const Signup = ({ email, setIsLoggedIn, setOpenModal }) => {
       setIsLoggedIn(true);
       setTimeout(() => { 
         setOpenModal(false); 
-      }, 1000);
-      toast.success(`welcome ${formData?.fullName}, you are successfully logged in`);
-    }
+      }, 600);
+      toast.success(`welcome ${formData?.fullName}, you are successfully logged in`,  {
+        position: "top-center", 
+        autoClose: 2000
+    })
   };
 
   const handleChange = (e) => {
@@ -150,5 +152,5 @@ const Signup = ({ email, setIsLoggedIn, setOpenModal }) => {
     </div>
   );
 };
-
+}
 export default Signup;

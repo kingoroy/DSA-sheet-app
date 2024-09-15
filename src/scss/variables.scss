@@ -14,11 +14,13 @@ $white: var(--white);
 $black: var(--black);
 $input-border: var(--input-border);
 $disabled-input-background: var(--disabled-input-background);
+$navbar-box-shadow: var(--navbar-box-shadow);
 
 :root {
     --primary-text-color: #560bad;
     --disabled-input-background: #f1f1f1;
     --input-border: rgba(128, 128, 128, 0.5);
+    --navbar-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     --grey-text-color: #787c8f;
     --black: #121212;
     --light-grey-text-color: #25252d;
@@ -33,6 +35,7 @@ $disabled-input-background: var(--disabled-input-background);
 .dark-mode {
     --white: #121212;
     --black:white;
+    --navbar-box-shadow:rgba(224, 224, 225, 0.15) 0px 5px 15px 0px;
     --disabled-input-background: #434242;
     --input-border: rgba(211, 200, 200, 0.599);
     --grey-border: #3b3b3b;

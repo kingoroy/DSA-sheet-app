@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import DsaSheetPage from "./pages/DsaSheetPage";
+import { toast } from 'react-toastify';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,6 +20,10 @@ function App() {
   const handleLoginLogout = () => {
     if (isLoggedIn) {
       localStorage.removeItem('activeEmail');
+      toast.success(`Logout is Successfully.`,  {
+        position: "top-center", 
+        autoClose: 2000
+    });
       setIsLoggedIn(false);
     }
   };

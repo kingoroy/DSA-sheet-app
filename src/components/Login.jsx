@@ -30,7 +30,10 @@ const Login = ({ email, onClose, setIsLoggedIn }) => {
 
       if (result.success) {
         setIsLoggedIn(true);
-        toast.success('Logged in successfully');
+        toast.success(`you are successfully logged in`,  {
+          position: "top-center", 
+          autoClose: 2000
+      })
         setTimeout(() => {
           onClose();
         }, 600);

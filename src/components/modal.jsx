@@ -62,7 +62,7 @@ const Modal = ({setOpenModal, openModal, setIsLoggedIn}) => {
       </div>
     {step === 'loginOrSignup' && <LoginOrSignup onSubmit={handleEmailSubmit} />}
       {step === 'login' && <Login email={email} onClose={onClose} setIsLoggedIn={setIsLoggedIn}/>}
-      {step === 'signup' && <Signup email={email} onClose={onClose} setIsLoggedIn={setIsLoggedIn}/>}
+      {step === 'signup' && <Signup email={email} onClose={onClose} setIsLoggedIn={setIsLoggedIn} setOpenModal={setOpenModal}/>}
     </div>
     </div>
   );

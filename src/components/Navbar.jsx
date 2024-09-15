@@ -15,6 +15,7 @@ const Navbar = ({ isLoggedIn, handleLoginLogout, setIsLoggedIn, openModal, setOp
   };
 
   return (
+    <>
     <nav className='navbarContainer'>
       {/* <input />
       <button>Search</button> */}
@@ -27,11 +28,12 @@ const Navbar = ({ isLoggedIn, handleLoginLogout, setIsLoggedIn, openModal, setOp
       ) : (
         <button onClick={handleClickLogin} className='loginBtn'>Login</button>
       )}
+    </nav>
       {openModal && (
         <Modal setOpenModal={setOpenModal} openModal={openModal} setIsLoggedIn={setIsLoggedIn}>
         </Modal>
       )}
-    </nav>
+    </>
   );
 };
 
